@@ -1,0 +1,203 @@
+/* ==== Modal Pop-Up ==== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Gelap transparan untuk efek dramatis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==== Isi Modal ==== */
+.modal-content {
+    background: #14213D; /* Warna utama dari logo */
+    color: #FCA311; /* Warna emas dari logo */
+    border-radius: 15px;
+    padding: 30px;
+    width: 50%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border: 2px solid #FCA311; /* Border emas */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ==== Tombol Close (X) ==== */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #FCA311;
+    transition: color 0.3s ease-in-out;
+}
+
+.close:hover {
+    color: white;
+}
+
+/* ==== Teks Harga ==== */
+.harga {
+    font-weight: bold;
+    color: #FFBA08; /* Warna emas lebih terang */
+    font-size: 18px;
+}
+
+/* ==== Tombol Pesan Sekarang ==== */
+.pesan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FCA311;
+    color: #14213D;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+    border: 2px solid #FFBA08;
+    width: 100%; /* Full-width agar rapi di mobile */
+    max-width: 220px; /* Agar tidak terlalu besar di desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==== Hover Effect pada Tombol Pesan ==== */
+.pesan:hover {
+    background: #FFBA08;
+    color: #14213D;
+    transform: scale(1.05);
+}
+
+/* ==== Responsive Design untuk Mobile ==== */
+@media (max-width: 480px) {
+    .pesan {
+        width: 100%; /* Lebar penuh di mobile */
+        font-size: 14px;
+        padding: 10px;
+    }
+    .pesan img {
+        width: 18px; /* Kecilkan ikon agar proporsional */
+    }
+}
+
+
+/* ==== Animasi Muncul (Fade-in) ==== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  dukungan */
+
+/* Styling untuk section */
+.supported-by {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul "Didukung Oleh" dengan efek warna berubah */
+.supported-by h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: changeColor 5s infinite alternate;
+}
+
+/* Animasi perubahan warna */
+@keyframes changeColor {
+    0% { color: #0033A0; } /* Bank Indonesia */
+    25% { color: #d71a1a; } /* OJK */
+    50% { color: #0072bc; } /* Dana */
+    75% { color: #0077B5; } /* LinkedIn */
+    100% { color: #0033A0; } /* Kembali ke awal */
+}
+
+/* Styling untuk slider */
+/* Styling untuk section */
+.supported-by {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul "Didukung Oleh" dengan efek warna berubah */
+.supported-by h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    animation: changeColor 5s infinite alternate;
+}
+
+/* Animasi perubahan warna */
+@keyframes changeColor {
+    0% { color: #0033A0; } /* Bank Indonesia */
+    25% { color: #d71a1a; } /* OJK */
+    50% { color: #0072bc; } /* Dana */
+    75% { color: #0077B5; } /* LinkedIn */
+    100% { color: #0033A0; } /* Kembali ke awal */
+}
+
+/* Styling untuk slider */
+.slider-container {
+    width: 85%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    max-width: 700px;
+    padding: 10px 0;
+}
+
+/* Slider dengan efek scroll lebih lambat */
+.slider {
+    display: flex;
+    gap: 40px; /* Menambah jarak antar gambar */
+    animation: slide 15s infinite linear;
+    align-items: center;
+}
+
+/* Efek transisi otomatis lebih lambat */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-25%); }
+    50% { transform: translateX(-50%); }
+    75% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+/* Styling untuk gambar di slider */
+.slider img {
+    width: 150px; /* Ukuran lebih besar */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efek zoom saat hover */
+.slider img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+}

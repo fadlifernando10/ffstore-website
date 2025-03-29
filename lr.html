@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login dan Registrasi</title>
+    <link rel="stylesheet" href="lr.css">
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- Form Login -->
+        <div id="login-form" class="form-container active">
+            <h2>Login</h2>
+            <form onsubmit="return validateLogin()">
+                <label for="login-username">Nama Pengguna:</label>
+                <input type="text" id="login-username" name="username" required>
+                <label for="login-password">Kata Sandi:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit">Masuk</button>
+            </form>
+            <p>Belum punya akun? <a href="#" onclick="toggleForms()">Daftar sekarang</a>.</p>
+        </div>
+
+        <!-- Form Registrasi -->
+        <div id="register-form" class="form-container" style="display: none;">
+            <h2>Registrasi</h2>
+            <form onsubmit="return validateRegister()">
+                <label for="register-username">Nama Pengguna:</label>
+                <input type="text" id="register-username" name="username" required>
+                <label for="register-password">Kata Sandi:</label>
+                <input type="password" id="register-password" name="password" required>
+                <label for="confirm-password">Konfirmasi Kata Sandi:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <button type="submit">Daftar</button>
+            </form>
+            <p>Sudah punya akun? <a href="#" onclick="toggleForms()">Masuk di sini</a>.</p>
+        </div>
+        <button class="back-button" onclick="goToHome()">Kembali ke Halaman Utama</button>
+    </div>
+
+
+
+    <script src="lr.js"></script>
+</body>
+</html>  

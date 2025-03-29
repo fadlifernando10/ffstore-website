@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF STORE</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- harga css -->
+    <link rel="stylesheet" href="./harga.css">
+    <!-- CSS AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- JavaScript AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+</head>
+<body>
+    
+    <header id="navbar" data-aos="zoom-in" class="bg-white fixed top-0 left-0 w-full z-50 shadow-md transition duration-300">
+      <div data-aos="fade-up" class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
+        <div class="flex h-16 items-center justify-between">
+          
+          <!-- Logo -->
+          <a class="block text-teal-600" href="#">
+            <img src="./logo/logo2.png" alt="FF STORE" width="70px" height="70px">
+          </a>
+    
+          <!-- Desktop Menu -->
+          <nav class="hidden md:flex gap-6">
+            <a class="text-[#1c343c] transition hover:text-[#f79146]" href="#home">Home</a>
+            <a class="text-[#1c343c] transition hover:text-[#f79146]" href="#about">About</a>
+            <a class="text-[#1c343c] transition hover:text-[#f79146]" href="#product">Product</a>
+            <a class="text-[#1c343c] transition hover:text-[#f79146]" href="#testimoni">Testimoni</a>
+            <a class="text-[#1c343c] transition hover:text-[#f79146]" href="#contact">Contact</a>
+          </nav>
+    
+          <!-- Login & Register Buttons (Desktop) -->
+          <div class="hidden md:flex items-center gap-4">
+            <a class="rounded-md bg-[#020C4D] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#f79146]" href="lr.html">Login</a>
+            <a class="rounded-md bg-[#020C4D] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#f79146]" href="lr.html">Register</a>
+          </div>
+    
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden rounded-md bg-gray-100 p-2 text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    
+    
+      <!-- Mobile Menu (Hidden by Default) -->
+      <nav id="mobile-menu" class="absolute left-0 top-16 w-full bg-white shadow-md hidden md:hidden">
+        <ul class="flex flex-col items-center gap-4 py-4 text-sm">
+          <li><a class="text-[#1c343c] transition hover:text-[#f79146]" href="#home">Home</a></li>
+          <li><a class="text-[#1c343c] transition hover:text-[#f79146]" href="#about">About</a></li>
+          <li><a class="text-[#1c343c] transition hover:text-[#f79146]" href="#product">Product</a></li>
+          <li><a class="text-[#1c343c] transition hover:text-[#f79146]" href="#testimoni">Testimoni</a></li>
+          <li><a class="text-[#1c343c] transition hover:text-[#f79146]" href="#contact">Contact</a></li>
+          <li><a class="rounded-md bg-[#020C4D] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#f79146]" href="./lr.html">Login</a></li>
+          <li><a class="rounded-md bg-[#020C4D] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#f79146]" href="./lr.html">Register</a></li>
+
+        </ul>
+      </nav>
+    </header>
+
+      <!-- cta start -->
+      <section id="home" class="relative w-full overflow-hidden">
+        <div class="relative w-full h-96">
+            <!-- Carousel Container -->
+            <div id="carousel" class="absolute inset-0 w-full h-full">
+                <img src="./carousel/slide-1.jpg" class="slide active" />
+                <img src="./carousel/slide-2.jpg" class="slide" />
+                <img src="./img/efootball.webp" class="slide" />
+                <img src="./img/pubg.jpeg" class="slide" />
+            </div>
+    
+            <!-- Navigasi Tombol -->
+            <button id="prev" class="nav-btn left-4">❮</button>
+            <button id="next" class="nav-btn right-4">❯</button>
+    
+            <!-- Slide Indicator -->
+            <div id="indicators" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2"></div>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center">
+            <h3 class="text-3xl md:text-5xl font-bold">
+                <span id="typing-text"></span><span class="cursor">|</span>
+            </h3>
+            <p class="mt-2 max-w-lg text-lg">- Siap melayani segala kebutuhan anda -</p>
+        </div>
+    </section>
+
+  <!-- JavaScript untuk Carousel -->
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll("#carousel img");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+    const indicatorsContainer = document.getElementById("indicators");
+    let index = 0;
+    let interval;
+
+    // Membuat indikator slide
+    slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("indicator");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => showSlide(i));
+        indicatorsContainer.appendChild(dot);
+    });
+
+    const indicators = document.querySelectorAll(".indicator");
+
+    function showSlide(newIndex) {
+        slides[index].classList.remove("active");
+        indicators[index].classList.remove("active");
+
+        index = newIndex;
+
+        slides[index].classList.add("active");
+        indicators[index].classList.add("active");
+    }
+
+    function nextSlide() {
+        showSlide((index + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        showSlide((index - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoSlide() {
+        interval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(interval);
+    }
+
+    nextButton.addEventListener("click", () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+    });
+
+    prevButton.addEventListener("click", () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+    });
+
+    // Mulai auto-slide
+    startAutoSlide();
+});
+
+  </script>
+   <!-- cta endd -->
+
+<!-- about start -->
+<section id="about" class="bg-gray-100 py-16">
+  <div class="max-w-6xl mx-auto px-6 lg:flex items-center gap-12">
+    <!-- Image Section -->
+    <div data-aos="fade-left" class="lg:w-1/2 mb-6 lg:mb-0 relative perspective-1000">
+      <div class="absolute inset-0 rounded-lg shadow-lg border-4 border-[#020C4D] opacity-50"></div>
+      <img src="./logo/logo2.png" alt="About Us" class="w-full rounded-lg shadow-2xl relative z-10 transform transition duration-500 hover:scale-105 hover:rotate-3 hover:shadow-3xl">
+    </div>
+
+    <!-- Text Section -->
+    <div data-aos="fade-right" class="lg:w-1/2 text-center lg:text-left">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Tentang FF STORE</h2>
+      <p class="text-gray-700 text-lg mb-4">
+        FF STORE adalah platform terpercaya untuk kebutuhan top up game Anda. Kami menyediakan layanan cepat, aman, dan terpercaya untuk berbagai game populer.
+      </p>
+      <p class="text-gray-700 text-lg mb-6">
+        Dengan harga bersaing dan layanan pelanggan terbaik, kami siap memenuhi kebutuhan gaming Anda kapan saja!
+      </p>
+      <a href="#contact" class="inline-block bg-[#020C4D] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#f79146] transition">
+        Hubungi Kami
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- about end -->
+
+   <!-- product start -->
+   <section id="product">
+
+     <div class="bg-[#020C4D] py-6"> 
+  
+      <div class="w-full text-center my-10">
+        <h2 data-aos="slide-up" class="text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-8 py-4 rounded-lg shadow-lg">
+          ⭐ MENYEDIAKAN TOP UP SEMUA GAME ⭐
+        </h2>
+      </div>
+  
+      <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto py-6"> 
+       <!-- Card Template -->
+  <div data-aos="flip-left" class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/ml.jpg" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+        <span class="absolute top-3 left-3 bg-[#F4A100] text-[#0D1B2A] px-3 py-1 text-xs font-semibold rounded-md">🔥 Populer</span>
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">Mobile Legends</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 4.000</span></p>
+    </div>
+  
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="mobilelegends">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+  <div data-aos="flip-left"  class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/ff.png" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+        <span class="absolute top-3 left-3 bg-[#F4A100] text-[#0D1B2A] px-3 py-1 text-xs font-semibold rounded-md">🔥 Populer</span>
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">Free Fire</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 2.500</span></p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="freefire">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+  <div data-aos="flip-left"  class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/pubg.jpeg" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">PUBG</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 00.000</span></p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="pubg">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+  <div data-aos="flip-left"  class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/efootball.webp" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">Efootball</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 00.000</span></p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="efootball">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+  <div data-aos="flip-left" class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/genshin.jpeg" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">Genshin Impact</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 00.000</span></p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="genshin">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+  <div data-aos="flip-left"  class="group relative block rounded-lg bg-[#0D1B2A] p-5 shadow-md border border-[#F4A100] transition duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <!-- Gambar Produk -->
+    <div class="relative overflow-hidden rounded-md">
+        <img src="./img/hok.jpeg" alt="Mobile Legends" class="h-44 w-full object-cover rounded-md transition duration-500 group-hover:scale-110" />
+    </div>
+
+    <!-- Konten Produk -->
+    <div class="mt-4 text-center">
+        <h3 class="text-lg font-semibold text-white group-hover:text-[#F4A100] transition">Honor of king</h3>
+        <p class="mt-1 text-sm text-gray-300">Mulai dari <span class="font-bold text-[#FFD700]">Rp 00.000</span></p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <button class="lihat-harga relative w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-[#F4A100] text-[#0D1B2A] text-sm font-semibold shadow-lg transition-all duration-300 ease-in-out hover:bg-[#FFD700] hover:scale-105 active:scale-95" 
+        data-produk="hok">
+        <span class="relative z-10">💰 Lihat Harga</span>
+    </button>
+</div>
+
+    
+
+      </div>
+      <!-- Modal Pop-up -->
+      <div id="popup-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="popup-title">HARGA</h2>
+            <div id="popup-content" class="content"></div>
+        </div>
+    </div>
+    
+
+     </div>
+  
+     </div>
+     <!-- product end -->
+  
+    <!-- product start 2  -->
+    <div class="w-full text-center my-10">
+      <h2 class="text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-8 py-4 rounded-lg shadow-lg">
+        ⭐ MENYEDIAKAN APP PREIMIUM ⭐
+      </h2>
+    </div>
+    <div data-aos="zoom-in" class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+          <img src="./pro/_Почему лучше не пользоваться GetContact и удалить свой аккаунт.jpeg" alt="Product 1" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-gray-900">Getcontact Premium</h3>
+          <p class="text-gray-600 mt-2">Dapatkan akses ke fitur premium dengan harga terbaik.</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+        </a>
+      </div>
+      
+      <!-- Card 2 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+          <img src="./pro/spotify.png" alt="Product 2" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-gray-900">Spotify Premium</h3>
+          <p class="text-gray-600 mt-2">Layanan eksklusif untuk meningkatkan pengalaman Anda.</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+        </a>
+      </div>
+      
+      <!-- Card 3 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+          <img src="./pro/Logo Canva.jpeg" alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-gray-900">Canva Pro</h3>
+          <p class="text-gray-600 mt-2">Dapatkan fitur eksklusif dengan mudah dan cepat.</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+          
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+          <img src="./pro/Get CapCut  Pro for free.jpeg" alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-gray-900">Capcut Pro</h3>
+          <p class="text-gray-600 mt-2">Dapatkan fitur editing yang lebih lengkap dan menarik.</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+        
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+        
+          <img src="./pro/download (1).jpeg" alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-gray-900">Netflix Premium</h3>
+          <p class="text-gray-600 mt-2">Nikmati film dengan pengalaman yang menegangkan</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+        </a>
+      </div>
+
+      <!-- Card 6 -->
+      <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <img src="./pro/vidio.png" alt="Product 3" class="w-full h-48 object-cover rounded-lg mb-4">
+      
+        <a href="https://wa.me/6282216337514?text=Assalamualaikum saya mau beli apk pro">
+          <h3 class="text-xl font-semibold text-gray-900">Vidio Premium</h3>
+          <p class="text-gray-600 mt-2">Tonton live streaming klub bola kesukaanmu sekarang tanpa iklan.</p>
+          <button class="mt-4 bg-[#020C4D] text-white px-4 py-2 rounded-lg hover:bg-[#f79146] transition">Beli Sekarang</button>
+        
+        </a>  
+      </div>
+    </div>
+  
+    <!-- product start 2 end  -->
+
+  </section>
+
+  <!-- testimoni start -->
+  <section id="testimoni" class="bg-[#020C4D] flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-4xl p-5 bg-white rounded-lg shadow-lg">
+      <div class="marquee">
+          <div class="marquee-inner">
+              <!-- Testimoni yang sudah ada -->
+              <!-- Testimoni 1 -->
+              <div class="testimonial">
+                  <img src="./testi/pak Vinsen ambil nasi bungkus 💪.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 1">
+                  <p class="text-gray-600 italic">"Layanan yang luar biasa! Saya sangat puas dengan hasilnya."</p>
+                  <h3 class="mt-2 font-semibold">Pak vinsen el nasi bungkus</h3>
+              </div>
+              <!-- Testimoni 2 -->
+              <div class="testimonial">
+                  <img src="./testi/merah.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 2">
+                  <p class="text-gray-600 italic">"Produk berkualitas tinggi, sangat direkomendasikan!"</p>
+                  <h3 class="mt-2 font-semibold">Jalil merah</h3>
+              </div>
+              <!-- Testimoni 3 -->
+              <div class="testimonial">
+                  <img src="./testi/siti halimah.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 3">
+                  <p class="text-gray-600 italic">"Sangat profesional dan cepat dalam pelayanan!"</p>
+                  <h3 class="mt-2 font-semibold">Siti Halimah</h3>
+              </div>
+          </div>
+      </div>
+      <!-- Formulir Input Testimoni -->
+      <div class="mt-6">
+          <h2 class="text-lg font-semibold mb-2">Tambahkan Testimoni Anda</h2>
+          <form id="testimonial-form" class="space-y-4">
+              <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
+                  <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+              </div>
+              <div>
+                  <label for="photo" class="block text-sm font-medium text-gray-700">URL Foto</label>
+                  <input type="url" id="photo" name="photo" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+              </div>
+              <div>
+                  <label for="testimonial" class="block text-sm font-medium text-gray-700">Testimoni</label>
+                  <textarea id="testimonial" name="testimonial" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+              </div>
+              <div>
+                  <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Kirim Testimoni</button>
+              </div>
+          </form>
+      </div>
+  </div>
+  </section>
+  
+  <!-- testimoni end -->
+
+  <!-- dukungan start -->
+  <section class="supported-by">
+    <h2>Didukung Oleh</h2>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="./pro/bi.png" alt="Sponsor 1">
+            <img src="./pro/bca-removebg-preview.png" alt="Sponsor 2">
+            <img src="./pro/dana.jpeg" alt="Sponsor 3">
+            <img src="./pro/gopay.png" alt="Sponsor 5">
+            <img src="./pro/linkedin.png" alt="Sponsor 5">
+            <img src="./pro/ojk.png" alt="Sponsor 5">
+        </div>
+    </div>
+</section>
+  <!-- dukungan end -->
+
+  <footer id="contact" class="bg-white">
+    <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+      <div class="sm:flex sm:items-center sm:justify-between">
+
+        <ul class="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <img src="./pro/fb.png" alt="Facebook" class="size-6"  width="70px" height="70px">
+            </a>
+          </li>
+  
+          <li>
+            <a href="https://www.instagram.com/ffstore10_?igsh=MWMxdmdsZWJtZmpucQ==" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <img src="./pro/ig.png" alt="Instagram" class="size-6"  width="70px" height="70px">
+            </a>
+          </li>
+  
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <img src="./pro/twitter.png" alt="Twitter" class="size-6"  width="70px" height="70px">
+            </a>
+          </li>
+  
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <img src="./pro/github.png" alt="GitHub" class="size-6" width="70px" height="70px">
+            </a>
+          </li>
+  
+          <li>
+            <a href="https://wa.me/6282216337514?text=Assalamualaikum ngab" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
+              <img src="./pro/wa.png" alt="Dribbble" class="size-6" width="70px" height="70px">
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16">
+        <div>
+          <p class="font-medium text-gray-900">Services</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">1on1 Coaching</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Company Review</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Accounts Review</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">HR Consulting</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">SEO Optimisation</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <p class="font-medium text-gray-900">Company</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">About</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Meet the Team</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Accounts Review</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <p class="font-medium text-gray-900">Helpful Links</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Contact</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">FAQs</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Live Chat</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <p class="font-medium text-gray-900">Legal</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Accessibility</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Returns Policy</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Refund Policy</a></li>
+            <li><a href="#" class="text-gray-700 transition hover:opacity-75">Hiring-3 Statistics</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <p class="text-xs text-gray-500">&copy; 2025 - FFSTORE - PROF.CHATGPT.,M.KOM - FADLIFERNANDO.</p>
+    </div>
+  </footer>
+  
+    
+    <!-- JavaScript untuk Toggle Menu -->
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+    </script>
+
+    <!-- index.js -->
+    <script src="index.js"></script>
+
+    <!-- lr.js -->
+   <script src="./lr.js"></script>
+
+   <!-- harga.js -->
+    <script src="harga.js"></script>
+
+    <!-- animasi aos -->
+    <script>
+      AOS.init();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1C2C39; /* Warna biru keabu-abuan dari logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #000000; /* Warna hitam dari logo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    color: #ffffff; /* Warna teks putih agar kontras */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #F5A623; /* Warna emas untuk aksen */
+}
+
+.form-container {
+    display: none;
+    flex-direction: column;
+}
+
+.form-container.active {
+    display: flex;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #F5A623; /* Warna emas */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #F5A623;
+    border-radius: 5px;
+    background-color: #1F3140;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #F5A623;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #D48F1A;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+p a {
+    color: #F5A623;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #F5A623;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #D48F1A;
+}
