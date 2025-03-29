@@ -1,13 +1,11 @@
 /* ==== Modal Pop-Up ==== */
+/* ==== Modal Pop-Up ==== */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Gelap transparan untuk efek dramatis */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,39 +13,36 @@
 
 /* ==== Isi Modal ==== */
 .modal-content {
-    background: #14213D; /* Warna utama dari logo */
-    color: #FCA311; /* Warna emas dari logo */
-    border-radius: 15px;
-    padding: 30px;
-    width: 50%;
-    max-width: 420px;
+    background: #14213D;
+    color: #FCA311;
+    border-radius: 10px;
+    padding: 15px;
+    width: 80%;
+    max-width: 350px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    position: relative;
-    border: 2px solid #FCA311; /* Border emas */
-    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid #FCA311;
+    animation: fadeIn 0.2s ease-in-out;
 }
 
 /* ==== Tombol Close (X) ==== */
 .close {
     position: absolute;
-    top: 12px;
-    right: 18px;
-    font-size: 28px;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
     cursor: pointer;
     color: #FCA311;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.2s;
 }
 
-.close:hover {
-    color: white;
-}
+.close:hover { color: white; }
 
 /* ==== Teks Harga ==== */
 .harga {
     font-weight: bold;
-    color: #FFBA08; /* Warna emas lebih terang */
-    font-size: 18px;
+    color: #FFBA08;
+    font-size: 14px;
 }
 
 /* ==== Tombol Pesan Sekarang ==== */
@@ -57,25 +52,21 @@
     justify-content: center;
     background: #FCA311;
     color: #14213D;
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: 0.3s ease-in-out;
-    border: 2px solid #FFBA08;
-    width: 100%; /* Full-width agar rapi di mobile */
-    max-width: 220px; /* Agar tidak terlalu besar di desktop */
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 12px;
+    margin: 10px auto 0;
+    transition: 0.2s;
+    border: 1px solid #FFBA08;
+    width: 100%;
+    max-width: 180px;
 }
 
-/* ==== Hover Effect pada Tombol Pesan ==== */
 .pesan:hover {
     background: #FFBA08;
-    color: #14213D;
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* ==== Responsive Design untuk Mobile ==== */
