@@ -72,6 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
     typeEffect();
 });
 
+
+// sound
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.querySelector("audio");
+
+    if (audio) {
+        audio.volume = 0.5; // Mengatur volume lebih kecil
+        audio.play().catch(() => {
+            console.log("Autoplay diblokir. Audio akan diputar setelah interaksi pengguna.");
+        });
+    }
+});
+
+
 // membuat ketupat
 document.addEventListener("DOMContentLoaded", () => {
     function createKetupat() {

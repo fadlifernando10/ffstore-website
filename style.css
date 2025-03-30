@@ -150,24 +150,26 @@
     }
 }
 
- /* Gaya Lentera */
- #lentera-container {
+
+/* Gaya Lentera */
+#lentera-container {
     position: fixed;
     top: 80px; /* Menyesuaikan agar tidak tertutup navbar */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 120px; /* Meningkatkan jarak antar lentera */
     pointer-events: none;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     z-index: 999; /* Menaikkan agar di atas navbar */
 }
 
 .lentera {
     width: 80px;
-    height: auto;
+    aspect-ratio: 1/1; /* Memastikan gambar tetap proporsional */
+    object-fit: contain; /* Mencegah gambar terdistorsi */
     animation: floating 4s ease-in-out infinite;
 }
 
@@ -181,13 +183,17 @@
 @media (max-width: 768px) {
     #lentera-container {
         top: 60px; /* Sesuaikan agar tidak tertutup di mobile */
-        gap: 30px;
+        gap: 60px; /* Jarak lebih jauh di mobile juga */
     }
 
     .lentera {
         width: 50px;
+        aspect-ratio: 1/1; /* Menjaga agar tidak lonjong */
+        object-fit: contain;
     }
 }
+
+
 
 
 
