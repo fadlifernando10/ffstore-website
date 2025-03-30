@@ -126,3 +126,87 @@
         }
 
         
+        .ketupat {
+            position: fixed;
+            top: -50px;
+            width: 40px;
+            height: 40px;
+            background: url('./pro/kupat.png') no-repeat center;
+            background-size: contain;
+            animation: fall linear infinite;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+         /* Animasi Jatuh */
+  @keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+ /* Gaya Lentera */
+ #lentera-container {
+    position: fixed;
+    top: 80px; /* Menyesuaikan agar tidak tertutup navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    pointer-events: none;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 999; /* Menaikkan agar di atas navbar */
+}
+
+.lentera {
+    width: 80px;
+    height: auto;
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+    #lentera-container {
+        top: 60px; /* Sesuaikan agar tidak tertutup di mobile */
+        gap: 30px;
+    }
+
+    .lentera {
+        width: 50px;
+    }
+}
+
+
+
+/* Animasi Lentera Mengambang */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Efek Glow Cahaya */
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(255, 223, 86, 0.6));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px rgba(255, 223, 86, 1));
+    }
+}

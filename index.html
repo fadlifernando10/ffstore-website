@@ -67,7 +67,19 @@
         </ul>
       </nav>
     </header>
+    
+    <!-- ketupat -->
+    <div id="ketupat-container"></div>
+    <!-- ketupat end -->
 
+    <!-- lentera start -->
+    <div id="lentera-container">
+      <img src="./pro/lentera.png" class="lentera" alt="Lentera Lebaran">
+      <img src="./pro/lentera.png" class="lentera" alt="Lentera Lebaran">
+  </div>
+  
+    <!-- lentera end -->
+    
       <!-- cta start -->
       <section id="home" class="relative w-full overflow-hidden">
         <div class="relative w-full h-96">
@@ -415,54 +427,56 @@
   </section>
 
   <!-- testimoni start -->
-  <section id="testimoni" class="bg-[#020C4D] flex items-center justify-center min-h-screen">
-    <div class="w-full max-w-4xl p-5 bg-white rounded-lg shadow-lg">
-      <div class="marquee">
-          <div class="marquee-inner">
-              <!-- Testimoni yang sudah ada -->
-              <!-- Testimoni 1 -->
-              <div class="testimonial">
-                  <img src="./testi/pak Vinsen ambil nasi bungkus 💪.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 1">
-                  <p class="text-gray-600 italic">"Layanan yang luar biasa! Saya sangat puas dengan hasilnya."</p>
-                  <h3 class="mt-2 font-semibold">Pak vinsen el nasi bungkus</h3>
-              </div>
-              <!-- Testimoni 2 -->
-              <div class="testimonial">
-                  <img src="./testi/merah.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 2">
-                  <p class="text-gray-600 italic">"Produk berkualitas tinggi, sangat direkomendasikan!"</p>
-                  <h3 class="mt-2 font-semibold">Jalil merah</h3>
-              </div>
-              <!-- Testimoni 3 -->
-              <div class="testimonial">
-                  <img src="./testi/siti halimah.jpeg" class="w-16 h-16 mx-auto rounded-full mb-3" alt="Customer 3">
-                  <p class="text-gray-600 italic">"Sangat profesional dan cepat dalam pelayanan!"</p>
-                  <h3 class="mt-2 font-semibold">Siti Halimah</h3>
-              </div>
-          </div>
-      </div>
-      <!-- Formulir Input Testimoni -->
-      <div class="mt-6">
-          <h2 class="text-lg font-semibold mb-2">Tambahkan Testimoni Anda</h2>
-          <form id="testimonial-form" class="space-y-4">
-              <div>
-                  <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-                  <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
-              </div>
-              <div>
-                  <label for="photo" class="block text-sm font-medium text-gray-700">URL Foto</label>
-                  <input type="url" id="photo" name="photo" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
-              </div>
-              <div>
-                  <label for="testimonial" class="block text-sm font-medium text-gray-700">Testimoni</label>
-                  <textarea id="testimonial" name="testimonial" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
-              </div>
-              <div>
-                  <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Kirim Testimoni</button>
-              </div>
-          </form>
-      </div>
-  </div>
-  </section>
+  <section id="testimoni" class="bg-[#020C4D] flex items-center justify-center min-h-screen px-4 py-8">
+    <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg p-5">
+        <!-- Container untuk Testimoni -->
+        <div class="overflow-hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Testimoni 1 -->
+                <div class="testimonial text-center">
+                    <img src="./testi/pak Vinsen ambil nasi bungkus 💪.jpeg" class="w-20 h-20 mx-auto rounded-full mb-3" alt="Customer 1">
+                    <p class="text-gray-600 italic">"Layanan yang luar biasa! Saya sangat puas dengan hasilnya."</p>
+                    <h3 class="mt-2 font-semibold">Pak Vinsen El Nasi Bungkus</h3>
+                </div>
+                <!-- Testimoni 2 -->
+                <div class="testimonial text-center">
+                    <img src="./testi/merah.jpeg" class="w-20 h-20 mx-auto rounded-full mb-3" alt="Customer 2">
+                    <p class="text-gray-600 italic">"Produk berkualitas tinggi, sangat direkomendasikan!"</p>
+                    <h3 class="mt-2 font-semibold">Jalil Abdulkodir</h3>
+                </div>
+                <!-- Testimoni 3 -->
+                <div class="testimonial text-center sm:col-span-2">
+                    <img src="./testi/siti halimah.jpeg" class="w-20 h-20 mx-auto rounded-full mb-3" alt="Customer 3">
+                    <p class="text-gray-600 italic">"Sangat profesional dan cepat dalam pelayanan!"</p>
+                    <h3 class="mt-2 font-semibold">Siti Halimah</h3>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Testimoni -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-center mb-2">Tambahkan Testimoni Anda</h2>
+            <form id="testimonial-form" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                </div>
+                <div>
+                    <label for="photo" class="block text-sm font-medium text-gray-700">URL Foto</label>
+                    <input type="url" id="photo" name="photo" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+                </div>
+                <div>
+                    <label for="testimonial" class="block text-sm font-medium text-gray-700">Testimoni</label>
+                    <textarea id="testimonial" name="testimonial" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Kirim Testimoni</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
   
   <!-- testimoni end -->
 
@@ -573,6 +587,11 @@
       });
     </script>
 
+<audio autoplay loop>
+  <source src="./pro/new.MP3" type="audio/mp3">
+  Browser Anda tidak mendukung pemutar audio.
+</audio>
+
     <!-- index.js -->
     <script src="index.js"></script>
 
@@ -586,6 +605,8 @@
     <script>
       AOS.init();
     </script>
+
+
     
 </body>
 </html>
