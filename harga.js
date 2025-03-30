@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>140 Diamonds</strong> : <br><span class="harga">Rp 19.000</span></p>
         <p><strong>210 Diamonds</strong> : <br><span class="harga">Rp 29.000</span></p>
         <p><strong>355 Diamonds</strong> : <br><span class="harga">Rp 45.000</span></p>
-        <p><strong>720 Diamonds</strong> : <br><span class="harga">Rp 48.500</span></p>
+        <p><strong>720 Diamonds</strong> : <br><span class="harga">Rp 95.500</span></p>
         <p><strong>1000 Diamonds</strong> : <br><span class="harga">Rp 135.000</span></p>
         <p><strong>M.mingguan</strong> : <br><span class="harga">Rp 30.000</span></p>
         <p><strong>M.Bulanan</strong> : <br><span class="harga">Rp 85.000</span></p>
