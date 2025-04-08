@@ -73,63 +73,63 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// sound
-document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.querySelector("audio");
+// // sound
+// document.addEventListener("DOMContentLoaded", () => {
+//     const audio = document.querySelector("audio");
 
-    if (audio) {
-        audio.volume = 0.5; // Mengatur volume lebih kecil
-        audio.play().catch(() => {
-            console.log("Autoplay diblokir. Audio akan diputar setelah interaksi pengguna.");
-        });
-    }
-});
+//     if (audio) {
+//         audio.volume = 0.5; // Mengatur volume lebih kecil
+//         audio.play().catch(() => {
+//             console.log("Autoplay diblokir. Audio akan diputar setelah interaksi pengguna.");
+//         });
+//     }
+// });
 
 
-// membuat ketupat
-document.addEventListener("DOMContentLoaded", () => {
-    function createKetupat() {
-        const ketupat = document.createElement("div");
-        ketupat.classList.add("ketupat");
+// // membuat ketupat
+// document.addEventListener("DOMContentLoaded", () => {
+//     function createKetupat() {
+//         const ketupat = document.createElement("div");
+//         ketupat.classList.add("ketupat");
 
-        // Posisi acak di layar
-        ketupat.style.left = Math.random() * window.innerWidth + "px";
+//         // Posisi acak di layar
+//         ketupat.style.left = Math.random() * window.innerWidth + "px";
 
-        // Durasi jatuh acak
-        ketupat.style.animationDuration = (Math.random() * 3 + 2) + "s";
+//         // Durasi jatuh acak
+//         ketupat.style.animationDuration = (Math.random() * 3 + 2) + "s";
 
-        document.getElementById("ketupat-container").appendChild(ketupat);
+//         document.getElementById("ketupat-container").appendChild(ketupat);
 
-        // Hapus setelah selesai animasi
-        setTimeout(() => {
-            ketupat.remove();
-        }, 5000);
-    }
+//         // Hapus setelah selesai animasi
+//         setTimeout(() => {
+//             ketupat.remove();
+//         }, 5000);
+//     }
 
-    // Buat ketupat setiap 1 detik
-    setInterval(createKetupat, 1000);
+//     // Buat ketupat setiap 1 detik
+//     setInterval(createKetupat, 1000);
 
-});
+// });
 
 // lentera
-document.addEventListener("DOMContentLoaded", () => {
-    function createLentera() {
-        const lentera = document.createElement("div");
-        lentera.classList.add("lentera");
+// document.addEventListener("DOMContentLoaded", () => {
+//     function createLentera() {
+//         const lentera = document.createElement("div");
+//         lentera.classList.add("lentera");
 
-        // Posisi acak di layar
-        lentera.style.left = Math.random() * (window.innerWidth - 80) + "px";
+//         // Posisi acak di layar
+//         lentera.style.left = Math.random() * (window.innerWidth - 80) + "px";
 
-        // Ukuran acak (50px - 90px)
-        let size = Math.floor(Math.random() * 40) + 50;
-        lentera.style.width = size + "px";
-        lentera.style.height = (size * 1.6) + "px";
+//         // Ukuran acak (50px - 90px)
+//         let size = Math.floor(Math.random() * 40) + 50;
+//         lentera.style.width = size + "px";
+//         lentera.style.height = (size * 1.6) + "px";
 
-        document.getElementById("lentera-container").appendChild(lentera);
-    }
+//         document.getElementById("lentera-container").appendChild(lentera);
+//     }
 
-    // Buat 3 lentera secara acak
-    for (let i = 0; i < 3; i++) {
-        createLentera();
-    }
-});
+//     // Buat 3 lentera secara acak
+//     for (let i = 0; i < 3; i++) {
+//         createLentera();
+//     }
+// });
