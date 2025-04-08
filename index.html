@@ -100,104 +100,60 @@
         </div>
     
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center">
-            <h3 class="text-3xl md:text-5xl font-bold">
-                <span id="typing-text"></span><span class="cursor">|</span>
-            </h3>
-            <p class="mt-2 max-w-lg text-lg">- Siap melayani segala kebutuhan anda -</p>
+        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center px-4">
+          <h3 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            <span id="typing-text"></span><span class="cursor">|</span>
+          </h3>
+          <p class="mt-2 text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
+            - Siap melayani segala kebutuhan anda -
+          </p>
         </div>
+        
     </section>
 
-  <!-- JavaScript untuk Carousel -->
-  <script>
-   document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll("#carousel img");
-    const prevButton = document.getElementById("prev");
-    const nextButton = document.getElementById("next");
-    const indicatorsContainer = document.getElementById("indicators");
-    let index = 0;
-    let interval;
 
-    // Membuat indikator slide
-    slides.forEach((_, i) => {
-        const dot = document.createElement("div");
-        dot.classList.add("indicator");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => showSlide(i));
-        indicatorsContainer.appendChild(dot);
-    });
-
-    const indicators = document.querySelectorAll(".indicator");
-
-    function showSlide(newIndex) {
-        slides[index].classList.remove("active");
-        indicators[index].classList.remove("active");
-
-        index = newIndex;
-
-        slides[index].classList.add("active");
-        indicators[index].classList.add("active");
-    }
-
-    function nextSlide() {
-        showSlide((index + 1) % slides.length);
-    }
-
-    function prevSlide() {
-        showSlide((index - 1 + slides.length) % slides.length);
-    }
-
-    function startAutoSlide() {
-        interval = setInterval(nextSlide, 3000);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(interval);
-    }
-
-    nextButton.addEventListener("click", () => {
-        stopAutoSlide();
-        nextSlide();
-        startAutoSlide();
-    });
-
-    prevButton.addEventListener("click", () => {
-        stopAutoSlide();
-        prevSlide();
-        startAutoSlide();
-    });
-
-    // Mulai auto-slide
-    startAutoSlide();
-});
-
-  </script>
    <!-- cta endd -->
 
 <!-- about start -->
-<section id="about" class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-6 lg:flex items-center gap-12">
-    <!-- Image Section -->
-    <div data-aos="flip-right" class="lg:w-1/2 mb-6 lg:mb-0 relative perspective-1000">
-      <div class="absolute inset-0 rounded-lg shadow-lg border-4 border-[#020C4D] opacity-50"></div>
-      <img src="./logo/logo2.png" alt="About Us" class="w-full rounded-lg shadow-2xl relative z-10 transform transition duration-500 hover:scale-105 hover:rotate-3 hover:shadow-3xl">
-    </div>
-
+<section id="about" class="bg-gray-100 py-12 sm:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+    
     <!-- Text Section -->
-    <div data-aos="fade-right" class="lg:w-1/2 text-center lg:text-left">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Tentang FF STORE</h2>
-      <p class="text-gray-700 text-lg mb-4">
+    <div data-aos="fade-right" class="w-full lg:w-2/3 text-center lg:text-left">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+        Tentang <span class="text-[#020C4D]">FF STORE</span>
+      </h2>
+
+      <p class="text-gray-700 text-base sm:text-lg mb-4">
         FF STORE adalah platform terpercaya untuk kebutuhan top up game Anda. Kami menyediakan layanan cepat, aman, dan terpercaya untuk berbagai game populer.
       </p>
-      <p class="text-gray-700 text-lg mb-6">
+
+      <p class="text-gray-700 text-base sm:text-lg mb-4">
         Dengan harga bersaing dan layanan pelanggan terbaik, kami siap memenuhi kebutuhan gaming Anda kapan saja!
       </p>
-      <a href="#contact" class="inline-block bg-[#020C4D] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#f79146] transition">
+
+      <p class="text-gray-700 text-base sm:text-lg mb-6">
+        Selain layanan top up, kami juga menyediakan <strong>jasa cetak foto</strong>, <strong>jasa print dokumen</strong>, serta pembuatan <strong>undangan</strong> untuk berbagai acara. Tak hanya itu, kami juga menerima <strong>jasa desain grafis</strong> dengan harga terjangkau dan kualitas terbaik sesuai kebutuhan Anda.
+      </p>
+
+      <a href="#contact"
+        class="inline-block bg-[#020C4D] text-white px-5 py-2.5 rounded-lg shadow-md hover:bg-[#f79146] transition duration-300 text-sm sm:text-base">
         Hubungi Kami
       </a>
     </div>
+
+    <!-- Image Section -->
+    <div data-aos="flip-right" class="w-full lg:w-1/3 relative flex justify-center">
+      <div class="absolute inset-0 rounded-lg shadow-lg border-4 border-[#020C4D] opacity-40 max-w-[300px] mx-auto"></div>
+      <img src="./logo/logo2.png" alt="About Us"
+        class="w-full max-w-[300px] rounded-lg shadow-2xl relative z-10 transform transition duration-500 hover:scale-105 hover:rotate-3 hover:shadow-3xl object-contain">
+    </div>
+
   </div>
 </section>
+
+
+
 
 
 <!-- about end -->
@@ -481,19 +437,31 @@
   <!-- testimoni end -->
 
   <!-- dukungan start -->
-  <section class="supported-by">
-    <h2>Didukung Oleh</h2>
-    <div class="slider-container">
-        <div class="slider">
-            <img src="./pro/bi.png" alt="Sponsor 1">
-            <img src="./pro/bca-removebg-preview.png" alt="Sponsor 2">
-            <img src="./pro/dana.jpeg" alt="Sponsor 3">
-            <img src="./pro/gopay.png" alt="Sponsor 5">
-            <img src="./pro/linkedin.png" alt="Sponsor 5">
-            <img src="./pro/ojk.png" alt="Sponsor 5">
-        </div>
+  <section class="bg-white py-12 px-4">
+    <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#020C4D]">Didukung Oleh</h2>
+  
+    <div class="overflow-hidden relative">
+      <div class="slider-track flex items-center gap-8 w-max animate-slide-left">
+        <!-- Logo baris pertama -->
+        <img src="./pro/bi.png" alt="BI" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/bca-removebg-preview.png" alt="BCA" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/dana.jpeg" alt="Dana" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/gopay.png" alt="Gopay" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/linkedin.png" alt="LinkedIn" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/ojk.png" alt="OJK" class="h-12 sm:h-16 md:h-20 object-contain" />
+  
+        <!-- Duplikat untuk loop seamless -->
+        <img src="./pro/bi.png" alt="BI" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/bca-removebg-preview.png" alt="BCA" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/dana.jpeg" alt="Dana" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/gopay.png" alt="Gopay" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/linkedin.png" alt="LinkedIn" class="h-12 sm:h-16 md:h-20 object-contain" />
+        <img src="./pro/ojk.png" alt="OJK" class="h-12 sm:h-16 md:h-20 object-contain" />
+      </div>
     </div>
-</section>
+  </section>
+  
+  
   <!-- dukungan end -->
 
   <footer id="contact" class="bg-white">

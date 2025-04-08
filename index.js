@@ -1,3 +1,65 @@
+// JavaScript untuk Carousel 
+
+ document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll("#carousel img");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+  const indicatorsContainer = document.getElementById("indicators");
+  let index = 0;
+  let interval;
+
+  // Membuat indikator slide
+  slides.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.classList.add("indicator");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => showSlide(i));
+      indicatorsContainer.appendChild(dot);
+  });
+
+  const indicators = document.querySelectorAll(".indicator");
+
+  function showSlide(newIndex) {
+      slides[index].classList.remove("active");
+      indicators[index].classList.remove("active");
+
+      index = newIndex;
+
+      slides[index].classList.add("active");
+      indicators[index].classList.add("active");
+  }
+
+  function nextSlide() {
+      showSlide((index + 1) % slides.length);
+  }
+
+  function prevSlide() {
+      showSlide((index - 1 + slides.length) % slides.length);
+  }
+
+  function startAutoSlide() {
+      interval = setInterval(nextSlide, 3000);
+  }
+
+  function stopAutoSlide() {
+      clearInterval(interval);
+  }
+
+  nextButton.addEventListener("click", () => {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+  });
+
+  prevButton.addEventListener("click", () => {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+  });
+
+  // Mulai auto-slide
+  startAutoSlide();
+});
 
 
 // otomatis tertup saat meng klik tautan lain dalam mobile mode
