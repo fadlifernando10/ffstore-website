@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>240 Diamonds</strong> : <br><span class="harga">Rp 65.000</span></p>
             <p><strong>284 Diamonds</strong> : <br><span class="harga">Rp 80.000</span></p>
             <p><strong>408 Diamonds</strong> : <br><span class="harga">Rp 107.000</span></p>
-            <p><strong>Weekly diamond pass 1x</strong> : <br><span class="harga">Rp 28.000</span></p>
+            <p><strong>Weekly diamond pass 1x</strong> : <br><span class="harga">Rp 27.500</span></p>
             <p><strong>weekly diamond pass 2x</strong> : <br><span class="harga">Rp 56.000</span></p>
             <p>Harga selengkap nya hubungi admin via WhatsApp atau klik tombol di bawah</p>
             <a class="pesan" href="https://wa.me/6282216337514?text=Assalamualaikum%20saya%20mau%20top%20up%20diamond" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>355 Diamonds</strong> : <br><span class="harga">Rp 45.000</span></p>
         <p><strong>720 Diamonds</strong> : <br><span class="harga">Rp 95.500</span></p>
         <p><strong>1000 Diamonds</strong> : <br><span class="harga">Rp 135.000</span></p>
-        <p><strong>M.mingguan</strong> : <br><span class="harga">Rp 30.000</span></p>
+        <p><strong>M.mingguan</strong> : <br><span class="harga">Rp 29.000</span></p>
         <p><strong>M.Bulanan</strong> : <br><span class="harga">Rp 85.000</span></p>
         <p>Harga selengkap nya hubungi admin via WhatsApp atau klik tombol di bawah</p>
         <a class="pesan" href="https://wa.me/6282216337514?text=Assalamualaikum%20saya%20mau%20top%20up%20diamond" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
