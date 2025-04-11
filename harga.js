@@ -6,15 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const hargaProduk = {
         mobilelegends: `
             <p><strong>12 Diamonds</strong> : <br><span class="harga">Rp 4.000</span></p>
+            <p><strong>19 Diamonds</strong> : <br><span class="harga">Rp 6.000</span></p>
             <p><strong>28 Diamonds</strong> : <br><span class="harga">Rp 8.000</span></p>
-            <p><strong>59 Diamonds</strong> : <br><span class="harga">Rp 16.500</span></p>
-            <p><strong>85 Diamonds</strong> : <br><span class="harga">Rp 23.000</span></p>
-            <p><strong>170 Diamonds</strong> : <br><span class="harga">Rp 46.000</span></p>
-            <p><strong>240 Diamonds</strong> : <br><span class="harga">Rp 65.000</span></p>
-            <p><strong>284 Diamonds</strong> : <br><span class="harga">Rp 80.000</span></p>
-            <p><strong>408 Diamonds</strong> : <br><span class="harga">Rp 107.000</span></p>
-            <p><strong>Weekly diamond pass 1x</strong> : <br><span class="harga">Rp 27.500</span></p>
-            <p><strong>weekly diamond pass 2x</strong> : <br><span class="harga">Rp 56.000</span></p>
+            <p><strong>59 Diamonds</strong> : <br><span class="harga">Rp 15.500</span></p>
+            <p><strong>85 Diamonds</strong> : <br><span class="harga">Rp 22.500</span></p>
+            <p><strong>113 Diamonds</strong> : <br><span class="harga">Rp 29.500</span></p>
+            <p><strong>144 Diamonds</strong> : <br><span class="harga">Rp 37.000</span></p>
+            <p><strong>170 Diamonds</strong> : <br><span class="harga">Rp 44.000</span></p>
+            <p><strong>240 Diamonds</strong> : <br><span class="harga">Rp 61.000</span></p>
+            <p><strong>284 Diamonds</strong> : <br><span class="harga">Rp 72.500</span></p>
+            <p><strong>408 Diamonds</strong> : <br><span class="harga">Rp 103.000</span></p>
+            <p><strong>Weekly diamond pass 1x</strong> : <br><span class="harga">Rp 26.500</span></p>
+            <p><strong>weekly diamond pass 2x</strong> : <br><span class="harga">Rp 52.500</span></p>
             <p>Harga selengkap nya hubungi admin via WhatsApp atau klik tombol di bawah</p>
             <a class="pesan" href="https://wa.me/6282216337514?text=Assalamualaikum%20saya%20mau%20top%20up%20diamond" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
             

@@ -85,10 +85,10 @@
         <div class="relative w-full h-96">
             <!-- Carousel Container -->
             <div id="carousel" class="absolute inset-0 w-full h-full">
-                <img src="./carousel/slide-1.jpg" class="slide active" />
-                <img src="./carousel/slide-2.jpg" class="slide" />
-                <img src="./img/efootball.webp" class="slide" />
-                <img src="./img/pubg.jpeg" class="slide" />
+                <img src="./img/e.jpeg" class="slide active" />
+                <img src="./img/w.jpeg" class="slide" />
+                <img src="./img/r.jpeg" class="slide" />
+                <img src="./img/q.jpeg" class="slide" />
             </div>
     
             <!-- Navigasi Tombol -->
@@ -100,12 +100,13 @@
         </div>
     
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center">
-            <h3 class="text-3xl md:text-5xl font-bold">
-                <span id="typing-text"></span><span class="cursor">|</span>
-            </h3>
-            <p class="mt-2 max-w-lg text-lg">- Siap melayani segala kebutuhan anda -</p>
-        </div>
+        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center p-4">
+    <h3 class="text-2xl sm:text-3xl md:text-5xl font-bold leading-snug max-w-sm">
+        <span id="typing-text"></span><span class="cursor">|</span>
+    </h3>
+    <p class="mt-2 max-w-xs sm:max-w-md text-base sm:text-lg">- Siap melayani segala kebutuhan anda -</p>
+</div>
+
     </section>
 
   <!-- JavaScript untuk Carousel -->
@@ -175,29 +176,51 @@
    <!-- cta endd -->
 
 <!-- about start -->
-<section id="about" class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-6 lg:flex items-center gap-12">
-    <!-- Image Section -->
-    <div data-aos="flip-right" class="lg:w-1/2 mb-6 lg:mb-0 relative perspective-1000">
-      <div class="absolute inset-0 rounded-lg shadow-lg border-4 border-[#020C4D] opacity-50"></div>
-      <img src="./logo/logo2.png" alt="About Us" class="w-full rounded-lg shadow-2xl relative z-10 transform transition duration-500 hover:scale-105 hover:rotate-3 hover:shadow-3xl">
-    </div>
+<section id="about" class="relative overflow-hidden bg-white py-20">
+  <!-- Background Gradient Blob -->
+  <div class="absolute -top-20 -left-20 w-[300px] h-[300px] bg-gradient-to-tr from-[#f79146] to-[#020C4D] opacity-20 rounded-full blur-3xl z-0"></div>
 
-    <!-- Text Section -->
-    <div data-aos="fade-right" class="lg:w-1/2 text-center lg:text-left">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Tentang FF STORE</h2>
-      <p class="text-gray-700 text-lg mb-4">
-        FF STORE adalah platform terpercaya untuk kebutuhan top up game Anda. Kami menyediakan layanan cepat, aman, dan terpercaya untuk berbagai game populer.
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 flex flex-col lg:flex-row items-center gap-14">
+
+    <!-- Text Content -->
+    <div data-aos="fade-right" class="w-full lg:w-1/2 text-center lg:text-left">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+        Kenapa <span class="text-[#f79146]">FF STORE</span> Adalah Pilihan Tepat?
+      </h2>
+      <p class="text-gray-600 text-lg sm:text-xl mb-5 leading-relaxed">
+        Kami bukan sekadar platform top up. FF STORE hadir untuk memberikan <span class="font-semibold text-[#020C4D]">pengalaman terbaik</span> bagi para gamer: cepat, aman, dan tanpa ribet.
       </p>
-      <p class="text-gray-700 text-lg mb-6">
-        Dengan harga bersaing dan layanan pelanggan terbaik, kami siap memenuhi kebutuhan gaming Anda kapan saja!
-      </p>
-      <a href="#contact" class="inline-block bg-[#020C4D] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#f79146] transition">
-        Hubungi Kami
+      <ul class="text-gray-700 space-y-3 mb-8">
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-[#f79146]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Harga bersaing & transparan
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-[#f79146]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Layanan cepat dan responsif
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-[#f79146]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          Tersedia untuk berbagai game & aplikasi premium
+        </li>
+      </ul>
+      <a href="#contact" class="inline-block bg-[#020C4D] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#f79146] hover:text-black transition duration-300">
+        Hubungi Kami Sekarang
       </a>
     </div>
+
+    <!-- Image Side -->
+    <div data-aos="fade-left" class="w-full lg:w-1/2 relative">
+      <div class="rounded-3xl shadow-2xl overflow-hidden border-[6px] border-[#020C4D] hover:scale-105 transition-transform duration-500">
+        <img src="./logo/logo2.png" alt="Tentang FF STORE" class="w-full h-auto object-cover bg-white p-4">
+      </div>
+    </div>
+
   </div>
 </section>
+
+
+
 
 
 <!-- about end -->
@@ -207,11 +230,13 @@
 
      <div class="bg-[#020C4D] py-6"> 
   
-      <div class="w-full text-center my-10">
-        <h2 data-aos="slide-up" class="text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-8 py-4 rounded-lg shadow-lg">
+      <div class="w-full text-center my-10 px-4">
+        <h2 data-aos="slide-up"
+            class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg max-w-xs sm:max-w-md mx-auto">
           ⭐ MENYEDIAKAN TOP UP SEMUA GAME ⭐
         </h2>
       </div>
+      
   
       <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto py-6"> 
        <!-- Card Template -->
@@ -350,11 +375,13 @@
      <!-- product end -->
   
     <!-- product start 2  -->
-    <div class="w-full text-center my-10">
-      <h2 class="text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-8 py-4 rounded-lg shadow-lg">
-        ⭐ MENYEDIAKAN APP PREIMIUM ⭐
+    <div class="w-full text-center my-10 px-4">
+      <h2 data-aos="slide-up"
+          class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white bg-gradient-to-r from-[#020C4D] to-[#f79146] inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-lg max-w-xs sm:max-w-md mx-auto">
+        ⭐ MENYEDIAKAN TOP UP SEMUA GAME ⭐
       </h2>
     </div>
+    
     <div data-aos="zoom-in" class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Card 1 -->
       <div data-aos="flip-left"  class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
